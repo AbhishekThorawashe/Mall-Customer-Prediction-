@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<html>
+
+<head>
+    <style>
+        body
+        {
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100% 100%;
+        background-image:url({{url_for('static',filename='css/mall2.jpg')}})
+        }
+
+    </style>
+</head>
+{% endblock %}
+{% block body %}
+<body>
+<div class="content">
+    <h1 style="text-align: center">CHECK CUSTOMER CATEGORY</h1>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="float" name="Annual_Income" id="Annual_Income" placeholder="ANNUAL INCOME(k$)">
+            <input type="float" name="Spending_Score" id="Spending_Score" placeholder="SPENDING SCORE(1-100)">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}
